@@ -25,11 +25,6 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x > 0)
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        else
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -41,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         //rb.rotation = angle;
 
-        gameObject.GetComponent<Animator>().SetFloat("angle", angle);
+        float rotation = angle * -1 + 90;
+        gameObject.GetComponent<Animator>().SetFloat("angle", rotation);
     }
 }
