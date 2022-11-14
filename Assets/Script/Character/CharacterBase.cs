@@ -14,27 +14,44 @@ public class CharacterBase : MonoBehaviour
     public float movementSpeed;
 
     public bool isDead;
+    public float timeAnim;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         currentHP = baseHP;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
             TakeDamage(15);
+
+        if (timeAnim < 2f)
+            timeAnim += Time.deltaTime;
+
+        gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, timeAnim);
     }
 
     public void TakeDamage(int damage)
     {
+        
         if (currentHP > 0 && !isDead)
-            currentHP -= damage;
-        else
         {
-            currentHP = 0;
-            isDead = true;
+            AnimateDamage();
+            currentHP -= damage;
+
+            if(currentHP < 0)
+            {
+                currentHP = 0;
+                isDead = true;
+            }
         }
+    }
+
+    public void AnimateDamage()
+    {
+        timeAnim = 0f;
+        
     }
 }
