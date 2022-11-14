@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1060374582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060374583}
+  m_Layer: 0
+  m_Name: spawnTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1060374583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060374582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2083051706}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1064199513
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +166,7 @@ GameObject:
   - component: {fileID: 1064199514}
   - component: {fileID: 1064199515}
   - component: {fileID: 1064199517}
+  - component: {fileID: 1064199518}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -241,6 +273,24 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1064199518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064199513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76909061a22ba91409799bf83d0b1080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onScreen: 1
+  cursorTexture: {fileID: 2800000, guid: 5fe20ded3a6dd3c429a3044e38663f62, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  cam: {fileID: 1064199514}
+  mousePos: {x: 0, y: 0}
 --- !u!1 &1560278420
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +350,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.48801836, g: 0.745283, b: 0, a: 1}
+  m_Color: {r: 0.53755784, g: 0.67545176, b: 0.754717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -334,10 +384,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2083051706}
+  - component: {fileID: 2083051707}
+  - component: {fileID: 2083051703}
   - component: {fileID: 2083051705}
   - component: {fileID: 2083051704}
-  - component: {fileID: 2083051703}
-  - component: {fileID: 2083051707}
+  - component: {fileID: 2083051708}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -444,7 +495,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1060374583}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -468,3 +520,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2083051708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083051702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179b0e1ce5393664ba654005d42e8dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHP: 100
+  currentHP: 0
+  baseAtk: 10
+  movementSpeed: 5
+  isDead: 0
+  projectilePrefab: {fileID: 5769424333101667397, guid: 81d296d4b3d386e459d63271a02a3a45, type: 3}
+  projectileSpawn: {fileID: 1060374583}
+  radius: 0.4

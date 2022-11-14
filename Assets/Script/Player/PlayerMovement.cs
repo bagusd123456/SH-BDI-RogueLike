@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
-
+    CharacterBase characterData;
+    private void Awake()
+    {
+        characterData = gameObject.GetComponent<CharacterBase>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +29,19 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = GameManager.Instance.mousePos;
+
+        gameObject.GetComponent<Animator>().SetInteger("velocityX", Mathf.RoundToInt(movement.x));
+        gameObject.GetComponent<Animator>().SetInteger("velocityY", Mathf.RoundToInt(movement.y));
     }
 
     private void FixedUpdate()
+    {
+        if (!characterData.isDead)
+            Move();
+    }
+
+    public void Move()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
@@ -39,4 +52,6 @@ public class PlayerMovement : MonoBehaviour
         float rotation = angle * -1 + 90;
         gameObject.GetComponent<Animator>().SetFloat("angle", rotation);
     }
+
+    
 }
