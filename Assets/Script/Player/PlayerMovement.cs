@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
-    Vector2 movement;
+    public Vector2 movement;
     Vector2 mousePos;
 
     CharacterBase characterData;
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!characterData.isDead)
+        if (characterData.GetComponent<CharacterPlayer>().dashTime <= 0)
             Move();
     }
 
@@ -52,6 +52,4 @@ public class PlayerMovement : MonoBehaviour
         float rotation = angle * -1 + 90;
         gameObject.GetComponent<Animator>().SetFloat("angle", rotation);
     }
-
-    
 }

@@ -15,6 +15,8 @@ public class CharacterBase : MonoBehaviour
 
     public bool isDead;
     public float timeAnim;
+
+    public Animator anim;
     // Start is called before the first frame update
     public void Start()
     {
@@ -31,6 +33,18 @@ public class CharacterBase : MonoBehaviour
             timeAnim += Time.deltaTime;
 
         gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, timeAnim);
+
+    }
+
+    public IEnumerator Heal()
+    {
+        for (float currentHealth = currentHP; currentHP <= baseHP; currentHealth += 0.5f)
+        {
+            currentHP = Mathf.RoundToInt(currentHealth);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        
+        currentHP = baseHP;
     }
 
     public void TakeDamage(int damage)
@@ -41,7 +55,7 @@ public class CharacterBase : MonoBehaviour
             AnimateDamage();
             currentHP -= damage;
 
-            if(currentHP < 0)
+            if(currentHP <= 0)
             {
                 currentHP = 0;
                 isDead = true;
@@ -52,6 +66,5 @@ public class CharacterBase : MonoBehaviour
     public void AnimateDamage()
     {
         timeAnim = 0f;
-        
     }
 }

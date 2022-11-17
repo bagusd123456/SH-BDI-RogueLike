@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4314136821251794625}
   - component: {fileID: 7978355746085123498}
   - component: {fileID: -6127303112863103540}
+  - component: {fileID: 6549868619156144007}
+  - component: {fileID: 1746910450520096058}
   m_Layer: 0
   m_Name: Ice_Projectile
   m_TagString: Untagged
@@ -127,3 +129,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &6549868619156144007
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540492180632621596}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.05
+--- !u!114 &1746910450520096058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540492180632621596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133471857354d7b4a80de1bfb3e124d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileDestroy: {fileID: 9126726943102028047, guid: 93a5529422d7056479f4b4c64744d8e4,
+    type: 3}

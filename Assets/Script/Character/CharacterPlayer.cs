@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CharacterPlayer : CharacterBase
 {
-    public GameObject projectilePrefab;
     public GameObject slashPrefab;
-    public Transform projectileSpawn;
-    public Transform slashSpawn;
+    
 
     public float distance;
 
     public float radius = 5f;
-
-    public GameObject hitbox;
+    public float dashTime;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,52 +24,49 @@ public class CharacterPlayer : CharacterBase
         base.Update();
         if (Input.GetMouseButtonDown(0))
         {
-            RangedAttack();
+            var go = SkillManager.instance.availableSkills.Find(x => x.skillName == "IceShoot");
+            go.CastSkill();
         }
         distance = Vector2.Distance(GameManager.Instance.mousePos, transform.position);
 
         if (Input.GetMouseButtonDown(1))
         {
-            MeleeAttack();
+            var go = SkillManager.instance.availableSkills.Find(x => x.skillName == "BasicSlash");
+            go.CastSkill();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            dashTime = .15f;
+
+
+        CheckDash();
+
+        if (isDead)
+        {
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<Animator>().enabled = false;
+            this.enabled = false;
+        }
     }
 
-    public void RangedAttack()
+    public void CheckDash()
     {
-        //Spawn
-        var go = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
-        Vector2 direction = GameManager.Instance.mousePos - new Vector2(transform.position.x, transform.position.y);
-        go.GetComponent<Rigidbody2D>().AddForce(direction.normalized * 10f, ForceMode2D.Impulse);
+        if (dashTime > 0)
+        {
+            dashTime -= Time.deltaTime;
+            Dash();
+        }
 
-        //Rotation
-        float angle = Mathf.Atan2(GameManager.Instance.mousePos.y - transform.position.y, GameManager.Instance.mousePos.x - transform.position.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        go.transform.rotation = targetRotation;
-
-        Destroy(go, 5f);
-    }
-
-    public void MeleeAttack()
-    {
-        float angle = Mathf.Atan2(GameManager.Instance.mousePos.y - transform.position.y, GameManager.Instance.mousePos.x - transform.position.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        hitbox.transform.rotation = targetRotation;
-
-        
-
-        var go = Instantiate(slashPrefab, slashSpawn.transform.position, Quaternion.identity,hitbox.transform);
-        go.transform.rotation = targetRotation;
-        Destroy(go, 1f);
+        else
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
     public void Dash()
     {
-
+        PlayerMovement player = gameObject.GetComponent<PlayerMovement>();
+        Vector2 direction = player.movement;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * 3f, ForceMode2D.Impulse);
     }
 
-    private void OnDrawGizmos()
-    {
-        
-    }
+    
 }

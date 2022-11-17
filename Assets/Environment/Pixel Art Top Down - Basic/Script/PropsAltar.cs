@@ -17,11 +17,20 @@ namespace Cainos.PixelArtTopDown_Basic
         private void OnTriggerEnter2D(Collider2D other)
         {
             targetColor = new Color(1, 1, 1, 1);
+            if (other.CompareTag("Player"))
+            {
+                other.GetComponent<CharacterBase>().StartCoroutine("Heal");
+            }
+                
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
             targetColor = new Color(1, 1, 1, 0);
+            if (other.CompareTag("Player"))
+            {
+                other.GetComponent<CharacterBase>().StopCoroutine("Heal");
+            }
         }
 
         private void Update()

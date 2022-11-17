@@ -498,6 +498,54 @@ namespace Doozy.Editor.UIManager.UIMenu
                 [MenuItem(CATEGORY_MENU_PATH + "Flow Controller", false, MENU_ITEM_PRIORITY)]
                 public static void CreateFlowController(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "FlowController");
             }
+        }
+
+        public static class Menus
+        {
+            private const string TYPE_NAME = "Menus";
+            private const string TYPE_MENU_PATH = MENU_PATH + "/" + TYPE_NAME + "/";
+
+            public static class TabBars1
+            {
+                private const string CATEGORY_NAME = "Tab Bars 1";
+                private const string CATEGORY_MENU_PATH = TYPE_MENU_PATH + CATEGORY_NAME + "/";
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 1", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu1(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu1");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 1 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu1Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu1Tab");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 2", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu2(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu2");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 2 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu2Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu2Tab");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 3", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu3(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu3");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 3 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu3Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu3Tab");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 4", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu4(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu4");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 4 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu4Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu4Tab");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 5", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu5(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu5");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 5 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu5Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu5Tab");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 6", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu6(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu6");
+
+                [MenuItem(CATEGORY_MENU_PATH + "TB1 Menu 6 Tab", false, MENU_ITEM_PRIORITY)]
+                public static void CreateTB1Menu6Tab(MenuCommand command) => UIMenuUtils.AddToScene(TYPE_NAME, CATEGORY_NAME, "TB1Menu6Tab");
+            }
         }        
     }
 }

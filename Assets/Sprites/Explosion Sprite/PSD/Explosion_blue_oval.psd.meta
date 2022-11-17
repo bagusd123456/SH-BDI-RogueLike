@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,217 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Explosion_blue_oval_0
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 352
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: debf2d1f81034354791c3e9b4860bc53
-      internalID: 2008410950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_1
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 352
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73d9a8b9f4e0de944bd84cea16b53d04
-      internalID: 1820675809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_2
-      rect:
-        serializedVersion: 2
-        x: 685
-        y: 352
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a004879a64fcdac4daa0908784347357
-      internalID: 1871390797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_3
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 352
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78f76bd167cd7784ebedc484654feca7
-      internalID: 154176477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_4
-      rect:
-        serializedVersion: 2
-        x: 1243
-        y: 352
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b387c2fdf194e9478f1549e41e33151
-      internalID: 539094795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_5
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 98
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f3baee70adb9be45a0240a94e589f07
-      internalID: 27675875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_6
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 98
-        width: 187
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f07dc055bd191d84280e75e6e5826ad4
-      internalID: 198237100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_7
-      rect:
-        serializedVersion: 2
-        x: 668
-        y: 98
-        width: 191
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 145935fa18b345d4e8a239a5635e01c1
-      internalID: 1585293596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_8
-      rect:
-        serializedVersion: 2
-        x: 933
-        y: 98
-        width: 206
-        height: 150
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d3a05bd0078ca944b69380b7e51ac7e
-      internalID: 871628717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_blue_oval_9
-      rect:
-        serializedVersion: 2
-        x: 1243
-        y: 98
-        width: 175.4
-        height: 156
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bda097683038a0448e47cfcc82bb5a3
-      internalID: -167548348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -348,20 +138,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Explosion_blue_oval_9: -167548348
-      Explosion_blue_oval_3: 154176477
-      Explosion_blue_oval_2: 1871390797
-      Explosion_blue_oval_6: 198237100
-      Explosion_blue_oval_8: 871628717
-      Explosion_blue_oval_4: 539094795
-      Explosion_blue_oval_1: 1820675809
-      Explosion_blue_oval_5: 27675875
-      Explosion_blue_oval_0: 2008410950
-      Explosion_blue_oval_7: 1585293596
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
